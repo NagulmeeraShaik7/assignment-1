@@ -136,3 +136,235 @@ block_time,transaction_signature,block_num,program_id,trade_type,wallet_address,
 ---
 
 *This assignment tests real-world skills: working with unfamiliar technology stacks, processing streaming data, building full-stack applications, and most importantly, using AI tools to accelerate development in a fast-paced environment.*
+
+
+
+# instructions
+
+# Backend
+
+- PS C:\Nagulmeera-Projects\assignment-1\trading-analytics-backend> `cd ingest`
+- PS C:\Nagulmeera-Projects\assignment-1\trading-analytics-backend\ingest> ` npm start`
+
+Response getting like this: 
+
+```
+> start
+> node producer.js trades_data.csv
+
+{"level":"WARN","timestamp":"2025-10-03T15:59:05.077Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
+(node:52736) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Nagulmeera-Projects/assignment-1/trading-analytics-backend/ingest/producer.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Nagulmeera-Projects\assignment-1\trading-analytics-backend\ingest\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✅ Kafka Producer connected
+📤 1000 messages sent...
+📤 2000 messages sent...
+🏁 Finished producing 2501 messages
+```
+
+- PS C:\Nagulmeera-Projects\assignment-1\trading-analytics-backend> `cd rsi-processor`
+- PS C:\Nagulmeera-Projects\assignment-1\trading-analytics-backend>rsi-processor> `cargo clean`
+
+```
+PS C:\Nagulmeera-Projects\assignment-1\trading-analytics-backend\rsi-processor>                
+     Removed 1977 files, 948.7MiB total
+```
+- PS C:\Nagulmeera-Projects\assignment-1\trading-analytics-backend\rsi-processor> `cargo build`
+- PS C:\Nagulmeera-Projects\assignment-1\trading-analytics-backend\rsi-processor> `cargo run`
+```
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 16.67
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 10.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 10.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 10.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 10.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 10.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 10.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 40.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 52.63
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 52.63
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 52.63
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 52.63
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 52.63
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 52.63
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 71.43
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 55.56
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 41.67
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 41.67
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 22.22
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 36.36
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 53.33
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 53.33
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 53.33
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 53.33
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 72.73
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 100.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 27.78
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 10.87
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 7.04
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 6.13
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 6.06
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 6.06
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 6.06
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 3.12
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 0.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 25.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 25.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 25.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 20.00
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 16.67
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 14.29
+📊 Published + Broadcast RSI for FCuk4XWLR6fAJFTcQoMrm3KeywSt2X6wK4Ufh4Xjpump: 16.67
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 83.98
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 85.00
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 84.06
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 86.69
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 91.78
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 92.47
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 92.33
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 95.03
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 98.73
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 93.06
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 78.57
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 65.41
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 59.85
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 56.52
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 53.85
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 56.31
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 58.53
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 56.52
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 51.87
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 46.02
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 44.44
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 43.79
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 43.45
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 43.32
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 49.66
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 63.35
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 71.62
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 84.21
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 86.42
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 82.94
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 79.66
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 77.22
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 73.53
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 75.56
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 80.00
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 58.86
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 40.24
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 37.97
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 38.85
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 33.72
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 31.32
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 20.75
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 6.72
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 4.72
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 5.93
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 6.33
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 5.08
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 3.72
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 2.89
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 3.40
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 4.79
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 5.29
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 4.89
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 5.26
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 5.96
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 6.67
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 7.32
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 6.56
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 3.39
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 0.85
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 1.01
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 8.20
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 29.09
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 32.76
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 32.76
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 44.19
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 68.97
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 71.43
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 66.67
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 68.97
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 66.67
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 54.05
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 41.30
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 38.00
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 38.00
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 31.25
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 13.16
+📊 Published + Broadcast RSI for HkutG4exp1CxzGaDggWwMgPtQ2hXP2Sesde7WGVcpump: 5.71 
+
+``` 
+- Note: While run these commands `docker` should be On
+
+
+# Frontend 
+
+start command `npm run dev` or `npm start` 
+
+Automatically it will redirect to dashboard page 
+
+
